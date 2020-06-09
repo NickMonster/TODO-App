@@ -41,19 +41,13 @@ ul {
   padding: 10px 20px;
 }
 
-.todo-list {
-  flex: 1 1 0;
-  margin-top: 20px;
-  padding: 20px;
-  overflow-y: auto;
+.todo-add{
+  margin-left: 10px;
+  box-shadow: none;
 }
 
-.todo-delete {
-  margin: 10px;
-}
-
-.todo-checkbox {
-  margin: 10px;
+.todo-add:hover, .todo-item:hover{
+  background-color: rgba(48, 180, 99, .2)
 }
 
 .todo-container {
@@ -63,4 +57,109 @@ ul {
 
 .todo-container:first-of-type {
   border-top: 1px solid #333;
+}
+
+.todo-delete {
+  margin: 10px;
+}
+
+.todo-item{
+  padding: 10px;
+  border-bottom: 1px solid lightslategray;
+  display: flex;
+}
+
+.todo-item-checkbox {
+  display: none;
+}
+
+.todo-item-checkbox:checked + .todo-item-label{
+  color: #288463;
+  text-decoration: line-through;
+}
+
+.todo-item-checkbox:checked + .todo-item-label span{
+  border: 1px solid #288463;
+  position: relative;
+}
+
+.todo-item-checkbox:checked + .todo-item-label span::after{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #288463;
+  border-radius: 100%;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+}
+
+.todo-item-remove-btn{
+  border: 2px solid lightslategray;
+  border-radius: 100%;
+  background-color: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.todo-item-remove-btn:hover, .todo-item-remove-btn:active{
+  border: 2px solid red;
+}
+
+.todo-item-remove-btn:hover:before, .todo-item-remove-btn:hover::after{
+  border: 1px solid red;
+}
+
+.todo-item-remove-btn::before,
+.todo-item-remove-btn:after{
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 0px;
+  border: 1px solid lightslategray;
+  position: absolute;
+  left: 2px;
+  top: 9px;
+}
+
+.todo-item-remove-btn::before{
+  transform: rotate(45deg);
+}
+
+.todo-item-remove-btn:after{
+  transform: rotate(-45deg);
+}
+
+.todo-item-label{
+  margin: 0;
+  font-size: 20px;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.todo-item-label span{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid lightslategray;
+  border-radius: 100%;
+  margin: 4px 10px 0 0;
+}
+
+.todo-new-block {
+  display: flex;
+  margin: 20px 0;
+}
+
+.todo-new{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid lightslategray;
+  padding: 10px;
+  font-size: 18px;
+  color: #34495E;
+  flex: 1 1 auto
 }
